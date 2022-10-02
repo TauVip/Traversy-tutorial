@@ -19,4 +19,4 @@ app.use(errorHandler)
 
 app.listen(port, () => console.log(`Server started on port ${port}`))
 
-// Learn The MERN Stack - JWT Authentication | 36:36 / 52:28
+// Learn The MERN Stack - Frontend Authentication | Redux Toolkit | 44:32 / 1:13:25

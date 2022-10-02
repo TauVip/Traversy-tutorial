@@ -53,9 +53,15 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 })
 
-const getMe = asyncHandler(async (req, res) =>
-  res.json({ message: 'User data display' })
-)
+const getMe = asyncHandler(async (req, res) => {
+  const { _id, name, email } = await User.findById(req.user.id)
+
+  res.status(200).json({
+    id: _id,
+    name,
+    email
+  })
+})
 
 const generateToken = id =>
   jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' })
